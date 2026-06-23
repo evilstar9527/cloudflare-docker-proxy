@@ -1,5 +1,7 @@
 name = "cloudflare-docker-proxy"
+account_id = "b8488957e88658039d2a38fb8f160514"
 compatibility_date = "2023-12-01"
+main = "src/index.js"
 
 [dev]
 ip = "0.0.0.0"
@@ -7,7 +9,7 @@ port = 8787
 local_protocol = "http"
 
 [env.vars]
-CUSTOM_DOMAIN = "libcuda.so"
+CUSTOM_DOMAIN = "evilstarss.com"
 
 [env.dev.vars]
 MODE = "debug"
@@ -16,19 +18,19 @@ CUSTOM_DOMAIN = "exmaple.com"
 
 [env.production]
 name = "cloudflare-docker-proxy"
-# routes = [
-#   { pattern = "docker.libcuda.so", custom_domain = true },
-#   { pattern = "quay.libcuda.so", custom_domain = true },
-#   { pattern = "gcr.libcuda.so", custom_domain = true },
-#   { pattern = "k8s-gcr.libcuda.so", custom_domain = true },
-#   { pattern = "k8s.libcuda.so", custom_domain = true },
-#   { pattern = "ghcr.libcuda.so", custom_domain = true },
-#   { pattern = "cloudsmith.libcuda.so", custom_domain = true },
-# ]
+routes = [
+  { pattern = "docker.evilstarss.com", custom_domain = true },
+  { pattern = "quay.evilstarss.com", custom_domain = true },
+  { pattern = "gcr.evilstarss.com", custom_domain = true },
+  { pattern = "k8s-gcr.evilstarss.com", custom_domain = true },
+  { pattern = "k8s.evilstarss.com", custom_domain = true },
+  { pattern = "ghcr.evilstarss.com", custom_domain = true },
+]
 
 [env.production.vars]
 MODE = "production"
 TARGET_UPSTREAM = ""
+CUSTOM_DOMAIN = "evilstarss.com"
 
 [env.staging]
 name = "cloudflare-docker-proxy-staging"
